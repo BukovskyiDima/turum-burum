@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>turum-burum</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/search.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <section>
+        <h3>Местоположение</h3>
+        <form class="list" action="">
+            <ul class="list__main hide" >
+                <li class="list__main-show"><span>Фильтр</span></li>
+                <li class="list__main-all" data-name="Все области"><span>Все области</span></li>
+                <li class="list__main-with_some">
+                    <span>Только области</span>
+                    <ul class="list__second">
+                        <li><input type="text" placeholder="Поиск"></li>
+                        <li>
+                            <label>
+                                <input type="checkbox">
+                                <span>Киевская</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox" >
+                                <span>Харьковская</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox">
+                                <span>Одесская</span>
+                            </label>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list__main-no_one"><span>Исключить все области</span></li>
+                <li class="list__main-without_some">
+                    <span>Кроме областей</span>
+                    <ul class="list__second">
+                        <li><input type="text" placeholder="Поиск"></li>
+                        <li>
+                            <label>
+                                <input type="checkbox">
+                                <span>Киевская</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox">
+                                <span>Харьковская</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="checkbox">
+                                <span>Одесская</span>
+                            </label>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </form>
+        <div class="overview"></div>
+    </section>
+</body>
+</html>
