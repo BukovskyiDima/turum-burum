@@ -15,11 +15,11 @@
         <h3>Местоположение</h3>
         <form class="list" action="">
             <ul class="list__main hide" >
-                <li class="list__main-show"><span>Фильтр</span></li>
+                <li class="list__main-show" data-name="Фильтр"><span>Фильтр:</span></li>
                 <li class="list__main-all" data-name="Все области"><span>Все области</span></li>
-                <li class="list__main-with_some">
+                <li class="list__main-with_some" data-name="Только области">
                     <span>Только области</span>
-                    <ul class="list__second">
+                    <ul class="list__second add">
                         <li><input type="text" placeholder="Поиск"></li>
                         <li>
                             <label>
@@ -41,10 +41,10 @@
                         </li>
                     </ul>
                 </li>
-                <li class="list__main-no_one"><span>Исключить все области</span></li>
-                <li class="list__main-without_some">
+                <li class="list__main-no_one" data-name="Исключить все области"><span>Исключить все области</span></li>
+                <li class="list__main-without_some" data-name="Кроме областей">
                     <span>Кроме областей</span>
-                    <ul class="list__second">
+                    <ul class="list__second remove">
                         <li><input type="text" placeholder="Поиск"></li>
                         <li>
                             <label>
