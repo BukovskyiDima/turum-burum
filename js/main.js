@@ -2,12 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const doc = document,
     showMainList = doc.querySelector('.list__main-show'),
     goUpElem = doc.querySelector('.list__main'),
-    showSubListFirst = doc.querySelector('.list__main-with_some'),
-    showSubListSecond = doc.querySelector('.list__main-without_some'),
+    showSubListFirst = doc.querySelector('li.list__main-with_some'),
+    showSubListSecond = doc.querySelector('li.list__main-without_some'),
     subMenu = doc.querySelector('.reg_list'),
-    addMarker = doc.querySelector('.list__second'),
-    region = ['Харьковская','Одесская','Киевская'];
 
+    region = ['Харьковская','Одесская','Киевская','Херсонская','Львовская'];
+
+
+  createList(region);
     // показать первый список
 
     showMainList.addEventListener('click', showMainMenu);
@@ -17,16 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     goUpElem.addEventListener('click', goUp);
 
-    //показать второй списек
+    //показать второй список
 
   let showSecondList = (e) => {
-    let isLi = e.target.tagName === "LI";
+    let isLi = e.target.tagName === 'LI';
 
-    if(e.target.tagName == isLi){
-      e.target.contains(subMenu) ? e.target.removeChild(subMenu) : e.target.appendChild(subMenu);
-    } else if ( e.target.closest('li')){
-      e.target.closest('li').contains(subMenu) ?
-        e.target.closest('li').removeChild(subMenu) : e.target.closest('li').appendChild(subMenu);
+    if(isLi){
+      e.target.contains(subMenu) ?
+        e.target.removeChild(subMenu) : e.target.appendChild(subMenu);
     }
   };
 
@@ -35,10 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // интерактивные элементы
     //     появление по одному
+  let  addMarker = doc.querySelectorAll('.list__second input');
 
-  addMarker.addEventListener('click', function (e) {
+  let createMarker = function(e) {
     const ul = doc.querySelector('.overview ul');
-    // console.log(!e.target.marker );
+    console.log(!e.target.marker );
     // console.log(e.target.dataset.name);
     if (!e.target.marker) {
       const item = document.createElement('li');
@@ -51,9 +52,34 @@ document.addEventListener('DOMContentLoaded', function() {
       e.target.marker.remove();
       delete e.target.marker;
     }
-  });
-    // появление общее
+  };
+
+  // console.log(addMarker);
+  for(let i = 0; i < addMarker.length; i++){
+    // console.log(addMarker[i]);
+    addMarker[i].addEventListener('click', createMarker)
+  };
 
     // интерактивный поиск
+  let input = doc.querySelector('.reg_list input')
 
+  input.addEventListener('keyup', function() {
+    let value = this.value;
+    let filteredRegion = region.filter(function(reg){
+      //здесь осуществляеться проверка
+
+      for(let key in reg){
+        let currentVal = reg[key] + '';
+        if(currentVal.toLowerCase().indexOf(value) !== -1){
+          reg = key;
+          return true
+        }
+      }
+
+    });
+
+    console.log(filteredRegion);
+
+    createList(filteredRegion);
+  })
 });
