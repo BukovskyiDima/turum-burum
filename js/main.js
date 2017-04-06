@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showListSecond = doc.querySelector('.list__main');
 
     // показать первый список
-    let showMainList = function () {
+    let showMainList = () => {
         let showBlock = document.querySelector('.list__main');
 
         showBlock.classList.toggle('hide');
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showListMain.addEventListener('click', showMainList);
 
     //поднять элемент на верх
-    let goUp = function (e) {
+    let goUp = (e) => {
         let firstElem = doc.querySelector('.list__main-show'),
             isLi = e.target.tagName === 'LI';
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //показать второй списек
 
-    let showSecondList = function (e) {
+    let showSecondList = (e) => {
         let isLi = e.target.tagName === 'LI';
 
         if (e.target.tagName === isLi) {
@@ -46,7 +46,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // интерактивные элементы
+    //     появление по одному
 
+    let addReg = doc.querySelectorAll('.list__main-with_some label');
+
+    let showReg = () => {
+        let add = doc.querySelectorAll('.add input[type="checkbox"]'),
+            remove = doc.querySelector('.remove input[type="checkbox"]'),
+            liReg = doc.querySelectorAll('.overview li'),
+            i = 0;
+
+        for(; i < add.length; i++){
+            if (add[i].checked){
+                liReg[i].classList.toggle('show-reg')
+            }
+        }
+    }
+
+    for(let i = 0 ;i < addReg.length; i++){
+        addReg[i].addEventListener('click', showReg);
+    }
+
+    // появление общее
+
+    //     исчезновение
 
     // интерактивный поиск
 

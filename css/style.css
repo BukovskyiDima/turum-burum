@@ -119,7 +119,7 @@ ul{
     background-color: #cccccc;
     border: 1px solid #777777;
     border-radius: 5px;
-    display: inline-block;
+    display: none;
     padding: 5px;
 }
 
@@ -143,4 +143,8 @@ ul{
     top: 0%;
     width: 2px;
     transform: rotate(45deg);
+}
+
+li.show-reg{
+    display: inline-block;
 }
