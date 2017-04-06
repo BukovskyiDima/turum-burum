@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const doc = document,
-        showMainList = doc.querySelector('.list__main-show'),
-        goUpElem = doc.querySelector('.list__main'),
-        showSubListFirst = doc.querySelector('.list__main-with_some'),
-        showSubListSecond = doc.querySelector('.list__main-without_some'),
-        subMenu = doc.querySelector('.reg_list'),
-        addMarker = doc.querySelector('.list__second'),
-        region = ['Харьковская','Одесская','Киевская'];
+  const doc = document,
+    showMainList = doc.querySelector('.list__main-show'),
+    goUpElem = doc.querySelector('.list__main'),
+    showSubListFirst = doc.querySelector('.list__main-with_some'),
+    showSubListSecond = doc.querySelector('.list__main-without_some'),
+    subMenu = doc.querySelector('.reg_list'),
+    addMarker = doc.querySelector('.list__second'),
+    region = ['Харьковская','Одесская','Киевская'];
 
     // показать первый список
 

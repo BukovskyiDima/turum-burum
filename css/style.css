@@ -1,152 +1,152 @@
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ul{
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .list__main{
-    border: 1px solid #c3c3c3;
-    width: 200px;
+  border: 1px solid #c3c3c3;
+  width: 200px;
 }
 
 .hide {
-    overflow: hidden;
-    height: 30px;
+  overflow: hidden;
+  height: 30px;
 }
 
 .list__main > li{
-    cursor: pointer;
-    height: 30px;
-    padding: 8px 10px;
-    font-size: 16px;
-    line-height: 16px;
+  cursor: pointer;
+  height: 30px;
+  padding: 8px 10px;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .list__main > li:hover {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 .list__main > li.list__main-show:hover {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .list__main-show:after{
-    left: 88%;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(119, 119, 119, 0);
-    border-top-color: #777777;
-    border-width: 4px;
-    margin-top: -4px;
+  left: 88%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(119, 119, 119, 0);
+  border-top-color: #777777;
+  border-width: 4px;
+  margin-top: -4px;
 }
 
 .list__main-with_some, .list__main-without_some, .list__main-show{
-    position: relative;
+  position: relative;
 }
 
 .list__main-with_some:after, .list__main-without_some:after{
-    left: 88%;
-    top: 50%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-color: rgba(119, 119, 119, 0);
-    border-left-color: #777777;
-    border-width: 4px;
-    margin-top: -4px;
+  left: 88%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(119, 119, 119, 0);
+  border-left-color: #777777;
+  border-width: 4px;
+  margin-top: -4px;
 }
 .reg_list{
-    display: none;
+  display: none;
 }
 
 .list__main-with_some > .reg_list, .list__main-without_some > .reg_list{
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 90%;
-    z-index: 10;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  z-index: 10;
 }
 
 .list__second{
-    background-color: #fff;
-    border: 1px solid #c3c3c3;
-    padding: 0px 0 1px 0;
-    width: 200px;
-    margin-top: 0;
+  background-color: #fff;
+  border: 1px solid #c3c3c3;
+  padding: 0px 0 1px 0;
+  width: 200px;
+  margin-top: 0;
 }
 
 .list__second li, .reg_list input[type='text']{
-    height: 30px;
-    font-size: 16px;
-    line-height: 16px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 .reg_list input[type='text']{
-    padding: 6px 10px;
-    width: 200px;
+  padding: 6px 10px;
+  width: 200px;
 }
 
 .list__second label{
-    display: block;
-    cursor: pointer;
-    padding: 6px 10px;
+  display: block;
+  cursor: pointer;
+  padding: 6px 10px;
 }
 
 .list__second label:hover {
-    background-color: #ccc; 
+  background-color: #ccc; 
 }
 
 
 .cross {
-    position: relative;
-    min-height: 10px;
-    min-width: 10px;
-    display: inline-block;
-    margin: 0 0 0 10px;
-    cursor: pointer;
+  position: relative;
+  min-height: 10px;
+  min-width: 10px;
+  display: inline-block;
+  margin: 0 0 0 10px;
+  cursor: pointer;
 }
 
 .overview li {
-    background-color: #cccccc;
-    border: 1px solid #777777;
-    border-radius: 5px;
-    display: none;
-    padding: 5px;
+  background-color: #cccccc;
+  border: 1px solid #777777;
+  border-radius: 5px;
+  display: none;
+  padding: 5px;
 }
 
 .cross:after {
-    background: red;
-    content: "";
-    height: 11px;
-    left: 0%;
-    position: absolute;
-    top: 0;
-    width: 2px;
-    transform: rotate(315deg);
+  background: red;
+  content: "";
+  height: 11px;
+  left: 0%;
+  position: absolute;
+  top: 0;
+  width: 2px;
+  transform: rotate(315deg);
 }
 
 .cross:before{
-    background: red;
-    content: "";
-    height: 11px;
-    left: 0%;
-    position: absolute;
-    top: 0%;
-    width: 2px;
-    transform: rotate(45deg);
+  background: red;
+  content: "";
+  height: 11px;
+  left: 0%;
+  position: absolute;
+  top: 0%;
+  width: 2px;
+  transform: rotate(45deg);
 }
 
 li.show-reg{
-    display: inline-block;
+  display: inline-block;
 }
