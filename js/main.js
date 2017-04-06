@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let showBlock = document.querySelector('.list__main');
 
         showBlock.classList.toggle('hide');
-    }
+    };
 
     showListMain.addEventListener('click', showMainList);
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             firstElem.innerHTML = firstElem.dataset.name + ':' || firstElem.closest('.list__main > li').dataset.name;
         }
-    }
+    };
 
     showListSecond.addEventListener('click', goUp);
 
@@ -40,9 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (e.target.closest('.list__main-with_some') || e.target.closest('.list__main-without_some')) {
             e.target.closest('li').classList.toggle('show');
         }
-    }
+    };
 
     showListSecond.addEventListener('click', showSecondList);
 
-    //интерактивный поиск
+
+    // интерактивные элементы
+
+
+    // интерактивный поиск
+
 });

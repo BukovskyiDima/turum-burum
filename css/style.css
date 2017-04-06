@@ -104,3 +104,43 @@ ul{
 .list__second label:hover {
     background-color: #ccc; 
 }
+
+
+.cross {
+    position: relative;
+    min-height: 10px;
+    min-width: 10px;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.overview li {
+    background-color: #cccccc;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.cross:after {
+    background: red;
+    content: "";
+    height: 11px;
+    left: 0%;
+    position: absolute;
+    top: 0;
+    width: 2px;
+    transform: rotate(315deg);
+}
+
+.cross:before{
+    background: red;
+    content: "";
+    height: 11px;
+    left: 0%;
+    position: absolute;
+    top: 0%;
+    width: 2px;
+    transform: rotate(45deg);
+}
