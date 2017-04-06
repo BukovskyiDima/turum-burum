@@ -66,12 +66,11 @@ ul{
     border-width: 4px;
     margin-top: -4px;
 }
-    
-.list__second{
+.reg_list{
     display: none;
 }
 
-.show > .list__second, .show > .list__second{
+.list__main-with_some > .reg_list, .list__main-without_some > .reg_list{
     display: block;
     position: absolute;
     top: 50%;
@@ -83,16 +82,19 @@ ul{
     background-color: #fff;
     border: 1px solid #c3c3c3;
     padding: 0px 0 1px 0;
+    width: 200px;
+    margin-top: 0;
 }
 
-.list__second li{
+.list__second li, .reg_list input[type='text']{
     height: 30px;
     font-size: 16px;
     line-height: 16px;
 }
 
-.list__second input{
+.reg_list input[type='text']{
     padding: 6px 10px;
+    width: 200px;
 }
 
 .list__second label{

@@ -6,9 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>turum-burum</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="js/search.js"></script>
+    <script src="js/showMainMenu.js"></script>
+    <script src="js/goUp.js"></script>
     <script src="js/main.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <section>
@@ -19,62 +20,45 @@
                 <li class="list__main-all" data-name="Все области"><span>Все области</span></li>
                 <li class="list__main-with_some" data-name="Только области">
                     <span>Только области</span>
-                    <ul class="list__second add">
-                        <li><input type="text" placeholder="Поиск"></li>
-                        <li>
-                            <label>
-                                <input type="checkbox">
-                                <span>Киевская</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox" >
-                                <span>Харьковская</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox">
-                                <span>Одесская</span>
-                            </label>
-                        </li>
-                    </ul>
                 </li>
                 <li class="list__main-no_one" data-name="Исключить все области"><span>Исключить все области</span></li>
                 <li class="list__main-without_some" data-name="Кроме областей">
                     <span>Кроме областей</span>
-                    <ul class="list__second remove">
-                        <li><input type="text" placeholder="Поиск"></li>
-                        <li>
-                            <label>
-                                <input type="checkbox">
-                                <span>Киевская</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox">
-                                <span>Харьковская</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                                <input type="checkbox">
-                                <span>Одесская</span>
-                            </label>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </form>
         <div class="overview">
             <ul>
-                <li><span>Киевская</span><span class="cross"></span></li>
-                <li><span>Харьковская</span><span class="cross"></span></li>
-                <li><span>Одесская</span><span class="cross"></span></li>
             </ul>
         </div>
     </section>
+
+    <div class="reg_list">
+        <input type="text" placeholder="Поиск">
+        <ul class="list__second">
+            <li>
+                <label>
+                    <input type="checkbox" data-name="Киевская">
+                    <span>Киевская</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" data-name="Харьковская">
+                    <span>Харьковская</span>
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" data-name="Одесская">
+                    <span>Одесская</span>
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <!--<li><span>Киевская</span><span class="cross"></span></li>-->
+    <!--<li><span>Харьковская</span><span class="cross"></span></li>-->
+    <!--<li><span>Одесская</span><span class="cross"></span></li>-->
 </body>
 </html>
