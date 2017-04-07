@@ -5,12 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     showSubListFirst = doc.querySelector('li.list__main-with_some'),
     showSubListSecond = doc.querySelector('li.list__main-without_some'),
     subMenu = doc.querySelector('.reg_list'),
+    regions = ['Харьковская','Одесская','Киевская','Херсонская','Львовская'],
+    listSecond = doc.querySelector('.list__second');
 
-    region = ['Харьковская','Одесская','Киевская','Херсонская','Львовская'];
 
-
-  createList(region);
-    // показать первый список
+  // показать первый список
 
     showMainList.addEventListener('click', showMainMenu);
 
@@ -34,17 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
   showSubListSecond.addEventListener('click', showSecondList);
 
     // интерактивные элементы
+  createList(regions);
     //     появление по одному
-  let  addMarker = doc.querySelectorAll('.list__second input');
 
   let createMarker = function(e) {
+    if (e.target.tagName !== 'LABEL') return
+
     const ul = doc.querySelector('.overview ul');
     console.log(!e.target.marker );
-    // console.log(e.target.dataset.name);
+    console.log(e.target);
     if (!e.target.marker) {
       const item = document.createElement('li');
       // console.log(item + ' 1')
-      item.innerHTML = '<span>' + e.target.dataset.name + '</span><span class="cross"></span>';
+      item.innerHTML = '<span>' + e.target.innerText + '</span><span class="cross"></span>';
       // console.log(item + ' 2');
       e.target.marker = item;
       ul.appendChild(item);
@@ -54,18 +55,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+
+
+
   // console.log(addMarker);
-  for(let i = 0; i < addMarker.length; i++){
-    // console.log(addMarker[i]);
-    addMarker[i].addEventListener('click', createMarker)
-  };
+  listSecond.addEventListener('click', createMarker)
 
     // интерактивный поиск
   let input = doc.querySelector('.reg_list input')
 
   input.addEventListener('keyup', function() {
     let value = this.value;
-    let filteredRegion = region.filter(function(reg){
+    let filteredRegion = regions.filter(function(reg){
       //здесь осуществляеться проверка
 
       for(let key in reg){
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log(filteredRegion);
 
-    createList(filteredRegion);
+    // createList(filteredRegion);
+    (createList(filteredRegion));
   })
 });
