@@ -5,16 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     showSubListFirst = doc.querySelector('li.list__main-with_some'),
     showSubListSecond = doc.querySelector('li.list__main-without_some'),
     subMenu = doc.querySelector('.reg_list'),
-    regions = ['Харьковская','Одесская','Киевская','Херсонская','Львовская'],
-    listSecond = doc.querySelector('.list__second');
-
+    listSecond = doc.querySelector('.list__second'),
+    showAllMarker = doc.querySelector('.list__main-all'),
+    hideAllMarker = doc.querySelector('.list__main-no_one');
 
   // показать первый список
 
     showMainList.addEventListener('click', showMainMenu);
 
     //поднять элемент на верх
-
 
     goUpElem.addEventListener('click', goUp);
 
@@ -32,56 +31,28 @@ document.addEventListener('DOMContentLoaded', function() {
   showSubListFirst.addEventListener('click', showSecondList);
   showSubListSecond.addEventListener('click', showSecondList);
 
-    // интерактивные элементы
-  createList(regions);
-    //     появление по одному
+  createList(createRegionsList());
 
-  let createMarker = function(e) {
-    if (e.target.tagName !== 'LABEL') return
+  //
+  // console.log(createList(createRegionsList()));
+  // console.log(createList(createRegionsList())[0].nextSibling.textContent);
 
-    const ul = doc.querySelector('.overview ul');
-    console.log(!e.target.marker );
-    console.log(e.target);
-    if (!e.target.marker) {
-      const item = document.createElement('li');
-      // console.log(item + ' 1')
-      item.innerHTML = '<span>' + e.target.innerText + '</span><span class="cross"></span>';
-      // console.log(item + ' 2');
-      e.target.marker = item;
-      ul.appendChild(item);
-    } else {
-      e.target.marker.remove();
-      delete e.target.marker;
-    }
+  let changeLest = function(list, selected) {
+    let defList = createList(createRegionsList());
+
+
   };
 
-
-
-
-  // console.log(addMarker);
-  listSecond.addEventListener('click', createMarker)
+  listSecond.addEventListener('click', createMarker);
 
     // интерактивный поиск
-  let input = doc.querySelector('.reg_list input')
+  let input = doc.querySelector('.reg_list input');
 
-  input.addEventListener('keyup', function() {
-    let value = this.value;
-    let filteredRegion = regions.filter(function(reg){
-      //здесь осуществляеться проверка
+  input.addEventListener('keyup', search);
+  // показать все
 
-      for(let key in reg){
-        let currentVal = reg[key] + '';
-        if(currentVal.toLowerCase().indexOf(value) !== -1){
-          reg = key;
-          return true
-        }
-      }
+  showAllMarker.addEventListener('click', showAll);
 
-    });
-
-    console.log(filteredRegion);
-
-    // createList(filteredRegion);
-    (createList(filteredRegion));
-  })
+//  скрыть все
+  hideAllMarker.addEventListener('click', hideAll);
 });
