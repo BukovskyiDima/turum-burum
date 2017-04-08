@@ -33,16 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   createList(createRegionsList());
 
-  //
-  // console.log(createList(createRegionsList()));
-  // console.log(createList(createRegionsList())[0].nextSibling.textContent);
-
-  let changeLest = function(list, selected) {
-    let defList = createList(createRegionsList());
-
-
-  };
-
   listSecond.addEventListener('click', createMarker);
 
     // интерактивный поиск
