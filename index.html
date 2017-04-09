@@ -15,6 +15,8 @@
     <script src="js/showFilteredRegion.js"></script>
     <script src="js/showAll.js"></script>
     <script src="js/hideAll.js"></script>
+    <script src="js/showSelectedRegions.js"></script>
+    <script src="js/createMarkerRemove.js"></script>
   <script src="js/main.js"></script>
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -38,14 +40,15 @@
       </div>
   </section>
 
-  <div class="reg_list">
+  <div class="reg_list add">
     <input type="text" placeholder="Поиск">
-    <ul class="list__second">
+    <ul class="list__second add">
     </ul>
   </div>
-
-    <!--<li><span>Киевская</span><span class="cross"></span></li>-->
-    <!--<li><span>Харьковская</span><span class="cross"></span></li>-->
-    <!--<li><span>Одесская</span><span class="cross"></span></li>-->
+  <div class="reg_list remove">
+      <input type="text" placeholder="Поиск">
+      <ul class="list__second remove">
+      </ul>
+  </div>
 </body>
 </html>

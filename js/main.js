@@ -4,10 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
     goUpElem = doc.querySelector('.list__main'),
     showSubListFirst = doc.querySelector('li.list__main-with_some'),
     showSubListSecond = doc.querySelector('li.list__main-without_some'),
-    subMenu = doc.querySelector('.reg_list'),
-    listSecond = doc.querySelector('.list__second'),
+    subMenuAdd = doc.querySelector('.reg_list.add'),
+    subMenuRemove = doc.querySelector('.reg_list.remove'),
+    listSecondAdd = doc.querySelector('.list__second.add'),
+    listSecondRemove = doc.querySelector('.list__second.remove'),
     showAllMarker = doc.querySelector('.list__main-all'),
     hideAllMarker = doc.querySelector('.list__main-no_one');
+
+  createList(createRegionsList());
 
   // показать первый список
 
@@ -22,18 +26,22 @@ document.addEventListener('DOMContentLoaded', function() {
   let showSecondList = (e) => {
     let isLi = e.target.tagName === 'LI';
 
-    if(isLi){
-      e.target.contains(subMenu) ?
-        e.target.removeChild(subMenu) : e.target.appendChild(subMenu);
+    if (e.target.dataset.name == 'Только области' && isLi){
+      e.target.contains(subMenuAdd) ?
+        e.target.removeChild(subMenuAdd) : e.target.appendChild(subMenuAdd);
+    } else if(e.target.dataset.name == 'Кроме областей' && isLi){
+      e.target.contains(subMenuRemove) ?
+        e.target.removeChild(subMenuRemove) : e.target.appendChild(subMenuRemove);
     }
   };
 
   showSubListFirst.addEventListener('click', showSecondList);
   showSubListSecond.addEventListener('click', showSecondList);
 
-  createList(createRegionsList());
 
-  listSecond.addEventListener('click', createMarker);
+
+  listSecondAdd.addEventListener('click', createMarker);
+  listSecondRemove.addEventListener('click', createMarkerRemove);
 
     // интерактивный поиск
   let input = doc.querySelector('.reg_list input');

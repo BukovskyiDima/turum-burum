@@ -5,9 +5,5 @@ let search = function(e) {
     return reg.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1;
   });
 
-  // console.log(filteredRegion);
   showFilteredRegion(filteredRegion)
-
-  // createList(filteredRegion);
-  // createList(filteredRegion, selectedRegions);
 };

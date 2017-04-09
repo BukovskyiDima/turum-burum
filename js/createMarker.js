@@ -4,21 +4,16 @@ let createMarker = function(e) {
 
   if (e.target.tagName !== 'LABEL') return;
 
-  const ul = document.querySelector('.overview ul'),
-    name = e.target.innerText,
-    regions = createRegionsList();
+  const  name = e.target.innerText;
 
-  if (!e.target.marker) {
-    const item = document.createElement('li');
-    item.innerHTML = '<span>' + name + '</span><span class="cross"></span>';
-    e.target.marker = item;
-    ul.appendChild(item);
+  console.log(e.target.closest('.list__second').classList.contains('add'));
+
+  if (!e.target.firstChild.checked){
     selectedRegions.push(name);
   } else {
-    e.target.marker.remove();
-    delete e.target.marker;
 
-    const index = regions.indexOf(name);
+    const index = selectedRegions.indexOf(name);
+
     console.log(index);
     if (index !== -1) {
       selectedRegions.splice(index,1)
@@ -26,5 +21,8 @@ let createMarker = function(e) {
       selectedRegions.splice(0,1);
     }
   }
-  // console.log(selectedRegions);
+
+  console.log(selectedRegions);
+
+  showSelectedRegions(selectedRegions);
 };

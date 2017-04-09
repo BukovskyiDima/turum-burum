@@ -1,5 +1,5 @@
 let hideAll = function(){
-  let ul = document.querySelector('.overview ul');
+  allSelectedRegion.splice(0, allSelectedRegion.length);
 
-  ul.innerHTML = '';
+  showSelectedRegions(allSelectedRegion);
 };
