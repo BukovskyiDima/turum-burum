@@ -21,10 +21,8 @@ let createList = function (list, selected) {
       }
     }
 
-    // console.log(someText);
     regionBox[j].innerHTML = someText;
   }
-
 
   addMarker = document.querySelectorAll('.list__second input');
   return addMarker

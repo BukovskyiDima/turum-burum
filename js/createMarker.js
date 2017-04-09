@@ -22,7 +22,5 @@ let createMarker = function(e) {
     }
   }
 
-  console.log(selectedRegions);
-
   showSelectedRegions(selectedRegions);
 };

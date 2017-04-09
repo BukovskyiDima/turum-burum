@@ -9,48 +9,29 @@ document.addEventListener('DOMContentLoaded', function() {
     listSecondAdd = doc.querySelector('.list__second.add'),
     listSecondRemove = doc.querySelector('.list__second.remove'),
     showAllMarker = doc.querySelector('.list__main-all'),
-    hideAllMarker = doc.querySelector('.list__main-no_one');
+    hideAllMarker = doc.querySelector('.list__main-no_one'),
+    input = doc.querySelector('.reg_list input'),
+    showSecondList = (e) => {
+      let isLi = e.target.tagName === 'LI';
+
+      if (e.target.dataset.name == 'Только области' && isLi){
+        e.target.contains(subMenuAdd) ?
+          e.target.removeChild(subMenuAdd) : e.target.appendChild(subMenuAdd);
+      } else if(e.target.dataset.name == 'Кроме областей' && isLi){
+        e.target.contains(subMenuRemove) ?
+          e.target.removeChild(subMenuRemove) : e.target.appendChild(subMenuRemove);
+      }
+    };
 
   createList(createRegionsList());
 
-  // показать первый список
-
-    showMainList.addEventListener('click', showMainMenu);
-
-    //поднять элемент на верх
-
-    goUpElem.addEventListener('click', goUp);
-
-    //показать второй список
-
-  let showSecondList = (e) => {
-    let isLi = e.target.tagName === 'LI';
-
-    if (e.target.dataset.name == 'Только области' && isLi){
-      e.target.contains(subMenuAdd) ?
-        e.target.removeChild(subMenuAdd) : e.target.appendChild(subMenuAdd);
-    } else if(e.target.dataset.name == 'Кроме областей' && isLi){
-      e.target.contains(subMenuRemove) ?
-        e.target.removeChild(subMenuRemove) : e.target.appendChild(subMenuRemove);
-    }
-  };
-
+  showMainList.addEventListener('click', showMainMenu);
+  goUpElem.addEventListener('click', goUp);
   showSubListFirst.addEventListener('click', showSecondList);
   showSubListSecond.addEventListener('click', showSecondList);
-
-
-
   listSecondAdd.addEventListener('click', createMarker);
   listSecondRemove.addEventListener('click', createMarkerRemove);
-
-    // интерактивный поиск
-  let input = doc.querySelector('.reg_list input');
-
   input.addEventListener('keyup', search);
-  // показать все
-
   showAllMarker.addEventListener('click', showAll);
-
-//  скрыть все
   hideAllMarker.addEventListener('click', hideAll);
 });
