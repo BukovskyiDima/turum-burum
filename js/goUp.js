@@ -1,4 +1,4 @@
-let goUp = function(e) {
+regionUtils.goUp = (e) => {
   let firstElem = document.querySelector('.list__main-show'),
     isLi = e.target.tagName === 'LI';
 

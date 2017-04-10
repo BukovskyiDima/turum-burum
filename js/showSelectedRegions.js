@@ -1,9 +1,9 @@
-let showSelectedRegions = function (list) {
-
+regionUtils.showSelectedRegions = (list) => {
   let ul = document.querySelector('.overview ul'),
     innerText = '',
     length = list.length,
     i = 0;
+
   if (length){
     for(;i < length; i++){
       innerText += '<li><span>' + list[i] + '</span><span class="cross"></span></li>';
@@ -12,4 +12,4 @@ let showSelectedRegions = function (list) {
   } else {
     ul.innerText = innerText;
   }
-}
+};

@@ -1,7 +1,7 @@
 const allSelectedRegion = [];
 
-let showAll = function(){
-  let regions = createRegionsList(),
+regionUtils.showAll = () => {
+  let regions = regionUtils.createRegionsList(),
     i = 0;
 
   allSelectedRegion.splice(0, allSelectedRegion.length);
@@ -10,5 +10,5 @@ let showAll = function(){
     allSelectedRegion.push(regions[i]);
   }
 
-  showSelectedRegions(allSelectedRegion);
+  regionUtils.showSelectedRegions(allSelectedRegion);
 };

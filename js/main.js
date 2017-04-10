@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     listSecondRemove = doc.querySelector('.list__second.remove'),
     showAllMarker = doc.querySelector('.list__main-all'),
     hideAllMarker = doc.querySelector('.list__main-no_one'),
-    input = doc.querySelector('.reg_list input'),
+    inputAdd = doc.querySelector('.add input'),
+    inputRemove = doc.querySelector('.remove input'),
     showSecondList = (e) => {
       let isLi = e.target.tagName === 'LI';
 
@@ -23,15 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
 
-  createList(createRegionsList());
+  regionUtils.createList(regionUtils.createRegionsList());
 
-  showMainList.addEventListener('click', showMainMenu);
-  goUpElem.addEventListener('click', goUp);
+  showMainList.addEventListener('click', regionUtils.showMainMenu);
+  goUpElem.addEventListener('click', regionUtils.goUp);
   showSubListFirst.addEventListener('click', showSecondList);
   showSubListSecond.addEventListener('click', showSecondList);
-  listSecondAdd.addEventListener('click', createMarker);
-  listSecondRemove.addEventListener('click', createMarkerRemove);
-  input.addEventListener('keyup', search);
-  showAllMarker.addEventListener('click', showAll);
-  hideAllMarker.addEventListener('click', hideAll);
+  listSecondAdd.addEventListener('click', regionUtils.createMarker);
+  listSecondRemove.addEventListener('click', regionUtils.createMarkerRemove);
+  inputAdd.addEventListener('keyup', regionUtils.search);
+  inputRemove.addEventListener('keyup', regionUtils.search);
+  showAllMarker.addEventListener('click', regionUtils.showAll);
+  hideAllMarker.addEventListener('click', regionUtils.hideAll);
 });

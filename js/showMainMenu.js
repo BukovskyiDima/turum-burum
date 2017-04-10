@@ -1,4 +1,4 @@
-let showMainMenu = () => {
+regionUtils.showMainMenu = () => {
   let showBlock = document.querySelector('.list__main');
 
   showBlock.classList.toggle('hide');

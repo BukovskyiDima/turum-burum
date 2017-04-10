@@ -1,12 +1,10 @@
 const selectedRegions = [];
 
-let createMarker = function(e) {
+regionUtils.createMarker = (e) => {
 
   if (e.target.tagName !== 'LABEL') return;
 
   const  name = e.target.innerText;
-
-  console.log(e.target.closest('.list__second').classList.contains('add'));
 
   if (!e.target.firstChild.checked){
     selectedRegions.push(name);
@@ -17,10 +15,10 @@ let createMarker = function(e) {
     console.log(index);
     if (index !== -1) {
       selectedRegions.splice(index,1)
-    } else if (selectedRegions.length == 1){
+    } else if (selectedRegions.length === 1){
       selectedRegions.splice(0,1);
     }
   }
 
-  showSelectedRegions(selectedRegions);
+  regionUtils.showSelectedRegions(selectedRegions);
 };

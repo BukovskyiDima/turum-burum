@@ -1,5 +1,5 @@
-let hideAll = function(){
+regionUtils.hideAll = () => {
   allSelectedRegion.splice(0, allSelectedRegion.length);
 
-  showSelectedRegions(allSelectedRegion);
+  regionUtils.showSelectedRegions(allSelectedRegion);
 };
