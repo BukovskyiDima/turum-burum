@@ -1,1 +1,4 @@
-const regionUtils = {};
+const regionUtils = {
+  allSelectedRegion: [],
+  selectedRegions: []
+};

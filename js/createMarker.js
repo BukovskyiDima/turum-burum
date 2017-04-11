@@ -1,5 +1,3 @@
-const selectedRegions = [];
-
 regionUtils.createMarker = (e) => {
 
   if (e.target.tagName !== 'LABEL') return;
@@ -7,18 +5,18 @@ regionUtils.createMarker = (e) => {
   const  name = e.target.innerText;
 
   if (!e.target.firstChild.checked){
-    selectedRegions.push(name);
+    regionUtils.selectedRegions.push(name);
   } else {
 
-    const index = selectedRegions.indexOf(name);
+    const index = regionUtils.selectedRegions.indexOf(name);
 
     console.log(index);
     if (index !== -1) {
-      selectedRegions.splice(index,1)
-    } else if (selectedRegions.length === 1){
-      selectedRegions.splice(0,1);
+      regionUtils.selectedRegions.splice(index,1)
+    } else if (regionUtils.selectedRegions.length === 1){
+      regionUtils.selectedRegions.splice(0,1);
     }
   }
 
-  regionUtils.showSelectedRegions(selectedRegions);
+  regionUtils.showSelectedRegions(regionUtils.selectedRegions);
 };
